@@ -89,7 +89,7 @@ const solveWaveIterative = board => {
 
 module.exports = {
   solve: boardJson => {
-    const board = new SudokuBoard(boardJson);
+    const board = new SudokuBoard(JSON.parse(JSON.stringify(boardJson)));
     if (!board.isBoardValid()) {
       throw new Error("The board is not valid");
     }

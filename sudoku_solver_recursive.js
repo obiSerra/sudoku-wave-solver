@@ -1,4 +1,4 @@
-const { solve, solveRecursive, SudokuBoard } = require("./src/index.js");
+const { solveRecursive, SudokuBoard } = require("./src/index.js");
 const fs = require("fs/promises");
 
 (async () => {
