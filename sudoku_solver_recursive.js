@@ -1,4 +1,4 @@
-const { solve, SudokuBoard } = require("./src/index.js");
+const { solve, solveRecursive, SudokuBoard } = require("./src/index.js");
 const fs = require("fs/promises");
 
 (async () => {
@@ -21,7 +21,7 @@ const fs = require("fs/promises");
 
     board.print();
     const time = Date.now();
-    const solved = solve(game);
+    const solved = solveRecursive(game);
     console.log("Solved in " + (Date.now() - time) + "ms");
     const solvedBoard = new SudokuBoard(solved);
     solvedBoard.print();

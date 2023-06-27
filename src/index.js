@@ -1,20 +1,8 @@
 const { sample, SudokuBoard, listPossibleValues } = require("./SudokuBoard.js");
 
-const emptyBoard = [
-  [null, null, null, null, null, null, null, null, null],
-  [null, null, null, null, null, null, null, null, null],
-  [null, null, null, null, null, null, null, null, null],
-  [null, null, null, null, null, null, null, null, null],
-  [null, null, null, null, null, null, null, null, null],
-  [null, null, null, null, null, null, null, null, null],
-  [null, null, null, null, null, null, null, null, null],
-  [null, null, null, null, null, null, null, null, null],
-  [null, null, null, null, null, null, null, null, null],
-];
-
 const solveWave = (board, invalid = {}, calls = []) => {
   const missing = board.missingNumbers();
-  if (missing.length === 0) return true;
+  if (missing.length === 0) return board;
 
   const possibleValues = [];
   for (const miss of missing) {
